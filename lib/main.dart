@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/nav.dart';
 import 'home.dart';
-import 'change_color.dart';
+import 'product.dart';
+import 'Developer.dart';
+import 'art.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-
+      title: 'Navigator Demo',
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/change_color': (context) => ChangeColor(),
-        '/nav': (context) => Nav(),
+        '/product': (context) => Product(),
+        '/Developer': (context) => Developer(),
+        '/art': (context) => Art(),
       },
     );
   }

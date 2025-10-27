@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Ass extends StatelessWidget {
-  const Ass({super.key});
+class Setting extends StatelessWidget {
+  const Setting({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +12,61 @@ class Ass extends StatelessWidget {
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Colors.blueGrey,
+              image: DecorationImage(
+                image: AssetImage("assets/images/monk.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
-            accountName: Text("ARTTO"),
-            accountEmail: Text("PERFECT"),
+            accountName: Text(
+              "Bounsavart sinnavong",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            accountEmail: Text(
+              "Email : manchesterunited",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage("assets/images/Monk.jpeg"),
+              backgroundImage: AssetImage("assets/images/IMG_0962.PNG"),
             ),
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('ARTTO'),
+            leading: Icon(Icons.settings, size: 30, color: Colors.orange),
+            title: Text('Settings'),
             onTap: () {
-              Navigator.pushNamed(context, '/change_color');
+              Navigator.pushNamed(context, '/art');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.home, size: 30, color: Colors.amber),
+            title: Text('Home'),
+            onTap: () {
+              Navigator.pushNamed(context, '/');
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.shopping_cart,
+              size: 30,
+              color: Colors.deepPurpleAccent,
+            ),
+            title: Text('Product'),
+            onTap: () {
+              Navigator.pushNamed(context, '/product');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person, size: 30, color: Colors.cyan),
+            title: Text('Information'),
+            onTap: () {
+              Navigator.pushNamed(context, '/Developer');
             },
           ),
         ],
